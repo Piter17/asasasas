@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "stdafx.h"
 #include "DrawableObject.h"
+#include "Font.h"
 
 enum TextFlags;
 
@@ -8,8 +9,8 @@ class Text : public DrawableObject
 {
 public:
     Text(Text&& t) = default;
-    Text(coordType X, coordType Y, string Text, ALLEGRO_COLOR Color, TextFlags Flags);
-    Text(coordPoint Point, string Text, ALLEGRO_COLOR Color, TextFlags Flags);
+    Text(coordType X, coordType Y, string Text, ALLEGRO_COLOR Color, TextFlags Flags, fontDescriptor Font);
+    Text(coordPoint Point, string Text, ALLEGRO_COLOR Color, TextFlags Flags, fontDescriptor Font);
 
 private:
     
@@ -17,7 +18,7 @@ private:
     TextFlags flags;
     string text;
     void _draw() override;
-    ALLEGRO_FONT* font;
+    shared_ptr<Font> _font;
     static ALLEGRO_FONT* _default_font;
 };
 

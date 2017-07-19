@@ -1,7 +1,5 @@
 ﻿#include "stdafx.h"
 #include "Rectangle.h"
-#include <valarray>
-#include <iostream>
 
 Rectangle::Rectangle(coordType X, coordType Y, coordType W, coordType H, rotType Rotation, eTexture TextureId)
 {
@@ -81,7 +79,6 @@ void Rectangle::_recalculate_vtxs()
 
     _vtxs[3].x = ((-halfW) * std::cos(_rot)) + (halfH * std::sin(_rot)) + _rect.X;
     _vtxs[3].y = ((halfW)* std::sin(_rot)) + (halfH * std::cos(_rot)) + _rect.Y;
-
 }
 
 void Rectangle::_init_vtxs()
@@ -125,7 +122,4 @@ void Rectangle::_init_vtxs()
     _vtxs[3].u = rect.X;
     _vtxs[3].v = rect.H;
     _vtxs[3].color = _color;
-
-
-
 }

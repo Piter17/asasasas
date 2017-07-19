@@ -36,9 +36,9 @@ void Game::_allegro_init()
 int Game::Run()
 {
     Texture::LoadTexture("asd.jpg", asd);
-    _display.itemsToDraw.emplace_back(new Text(400, 300, "Lubie placki", al_map_rgb(255, 0, 0), AlignCenter));
-    _display.itemsToDraw.emplace_back(new Text(400, 320, "Lubie placki", al_map_rgb(0, 255, 0), AlignLeft));
-    _display.itemsToDraw.emplace_back(new Text(400, 280, "Lubie placki", al_map_rgb(0, 0, 255), AlignRight));
+    _display.itemsToDraw.emplace_back(new Text(400, 300, "Lubie placki", al_map_rgb(255, 0, 0), AlignCenter, fontDescriptor("Comic Sans MS", 12)));
+    _display.itemsToDraw.emplace_back(new Text(400, 320, "Lubie placki", al_map_rgb(0, 255, 0), AlignLeft, fontDescriptor("Comic Sans MS", 12)));
+    _display.itemsToDraw.emplace_back(new Text(400, 280, "Lubie placki", al_map_rgb(0, 0, 255), AlignRight, fontDescriptor("Comic Sans MS", 12)));
     //_display.itemsToDraw.emplace_back(new Rectangle(300, 300, 150, 150, 0, al_map_rgb(255,0, 0)));
     auto rect = std::make_shared<Rectangle>(300, 300, 150, 150, 0, asd);
     
