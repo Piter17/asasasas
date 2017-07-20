@@ -8,9 +8,7 @@ public:
     Game();
 
     void Logic();
-
     int Run();
-
 
 private:
     std::chrono::time_point<std::chrono::system_clock> _lastTime;
